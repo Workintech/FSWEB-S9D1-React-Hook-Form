@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test": "vitest",
     "backend": "node src/mocks/api.js",
-    "wit": "concurrently 'npm run dev' 'npm run test'"
+    "wit": "concurrently 'npm run dev' 'npm run test'",
+    "test:run": "jest --json --outputFile ./resultz.json -c ./jest.config.js --forceExit",
+    "sendresults": "node sendTestResults.js"
   },
   "jest": {
     "verbose": true
@@ -42,7 +44,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "jsdom": "^23.0.1",
     "vite": "^5.0.8",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.0",
+    "jest-environment-jsdom": "^29.0.0"
   },
   "msw": {
     "workerDirectory": "public"
